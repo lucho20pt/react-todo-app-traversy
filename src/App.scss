@@ -1,11 +1,19 @@
+// vars
+$bg1: black;
+$text1 : aqua;
+
 header {
-  background-color: pink;
+  background-color: $bg1;
   h1 {
-    color: aqua;
+    color: $text1;
   }
 }
+
 footer {
   position: fixed;
   bottom: 0;
-  background-color: pink;
+  background-color: $bg1;
+  p{
+    color: $text1;
+  }
 }
