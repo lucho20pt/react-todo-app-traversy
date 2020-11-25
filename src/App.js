@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
-import Todos from './components/Todos/Todos';
+import React, { Component } from 'react'
+import Header from "./components/Header/Header"
+import Footer from "./components/Footer/Footer"
+import Todos from './components/Todos/Todos'
 
-import './App.scss';
+import './App.scss'
 
 class App extends Component {
 
