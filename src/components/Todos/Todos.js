@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import TodoItem from './TodoItem';
 
 class Todos extends Component {
 
@@ -16,11 +17,7 @@ class Todos extends Component {
                 </div>
 
                 { this.props.todos.map((todo) => (
-                <div className="row">
-                    <div className="col-12 text-left">                        
-                        <h3> {todo.title}</h3>
-                    </div>
-                </div>
+                    <TodoItem todo={todo} />
                 ))}
 
             </section>
