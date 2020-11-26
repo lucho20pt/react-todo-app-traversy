@@ -10,17 +10,21 @@ export class TodoItem extends Component {
     }
 
     render() {
+
+        // destructuring
+        const { id, title} = this.props.todo
+
         return (
             <div className="todo-item | d-flex align-items-center | px-4 py-2">
                 
                 <input type="checkbox" 
                     onChange={this.props.markComplete.bind(
-                        this, this.props.todo.id
+                        this, id
                     )} 
                 />
 
                 <h3 className={`m-2 ${this.checkStyleCompleted() }`}> 
-                    {this.props.todo.title}
+                    {title}
                 </h3>
                 
             </div>
