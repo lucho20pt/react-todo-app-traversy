@@ -7,7 +7,7 @@ class Todos extends Component {
     render() {
         // console.log(this.props.todos);
         return (
-            <section>
+            <section className="todos mx-auto">
 
                 <div className="row">
                     <div className="col-12 p-4 text-center">
@@ -17,9 +17,13 @@ class Todos extends Component {
                     </div>
                 </div>
 
-                { this.props.todos.map((todo) => (
-                    <TodoItem key={todo.id} todo={todo} />
-                ))}
+                <div className="row">
+                    <div className="col-lg-6 mx-auto">
+                        { this.props.todos.map((todo) => (
+                            <TodoItem key={todo.id} todo={todo} />
+                        ))}
+                    </div>
+                </div>
 
             </section>
         );

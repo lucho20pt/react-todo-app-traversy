@@ -1,7 +1,31 @@
 // vars
 $bg1: black;
-$text1 : aqua;
+$bg2: #eeeeee;
+$bg_even: rgba(173, 216, 230, 0.3);
+$bg_odd: rgba(224, 255, 255, 0.3);
 
+$text1: aqua;
+
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+// structure
+html,
+body {
+  margin: 0; padding: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  background-color: $bg2;
+}
+
+body {
+  height: auto;
+}
+
+// base components
 header {
   background-color: $bg1;
   h1 {
@@ -14,7 +38,37 @@ footer {
   width: 100%;
   bottom: 0;
   background-color: $bg1;
-  p{
+  p {
     color: $text1;
+  }
+}
+
+// components
+.todos {
+  overflow: hidden;
+
+  h2 {
+    font-size: 1.6rem;
+  }
+
+  .todo {
+    &-item {
+      border-bottom: 1px solid $bg2;
+
+      &:nth-child(even) {
+        background-color: $bg_even;
+      }
+      &:nth-child(odd) {
+        background-color: $bg_odd;
+      }
+
+      &-completed {
+        text-decoration: line-through;
+      }
+
+      h3 {
+        font-size: 1rem;
+      }
+    }
   }
 }
