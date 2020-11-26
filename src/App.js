@@ -41,6 +41,12 @@ class App extends Component {
     ]
   }
 
+  markComplete = (id) => {
+    // console.log("from app.js");
+    // console.log(this.state.todos);
+    console.log(id);
+  }
+
   render() {
     // console.log(this.state.todos);
     return (
@@ -49,7 +55,10 @@ class App extends Component {
         <Header/>
 
         <main className="container">
-          <Todos todos={this.state.todos} />
+          <Todos 
+            todos={this.state.todos} 
+            markComplete={this.markComplete} 
+          />
         </main>
 
         <Footer/>

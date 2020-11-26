@@ -5,18 +5,24 @@ export class TodoItem extends Component {
 
     checkStyleCompleted = () => {
         return(
-            this.props.todo.completed ? 
-            "todo-item-completed" : ""
+            this.props.todo.completed ? "todo-item-completed" : ""
         );
     }
 
     render() {
         return (
             <div className="todo-item | d-flex align-items-center | px-4 py-2">
-                <input type="checkbox"/>
+                
+                <input type="checkbox" 
+                    onChange={this.props.markComplete.bind(
+                        this, this.props.todo.id
+                    )} 
+                />
+
                 <h3 className={`m-2 ${this.checkStyleCompleted() }`}> 
                     {this.props.todo.title}
                 </h3>
+                
             </div>
         )
     }
