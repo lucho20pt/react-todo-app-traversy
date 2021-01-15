@@ -45,13 +45,15 @@ footer {
   }
 }
 
+.App{
+  h2 {
+    font-size: 1.4rem;
+  }
+}
+
 // components
 .todos {
   overflow: hidden;
-
-  h2 {
-    font-size: 1.6rem;
-  }
 
   .todo {
     &-item {

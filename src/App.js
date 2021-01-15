@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Header from "./components/layout/Header/Header"
 import Footer from "./components/layout/Footer/Footer"
 import Todos from './components/Todos/Todos'
+import AddTodo from './components/Todos/AddTodo'
 
 import './App.scss'
 
@@ -68,11 +69,15 @@ class App extends Component {
         <Header/>
 
         <main className="container">
+
+          <AddTodo />
+
           <Todos 
             todos={this.state.todos} 
             markComplete={this.markComplete}
             delTodo={this.delTodo}
           />
+
         </main>
 
         <Footer/>
