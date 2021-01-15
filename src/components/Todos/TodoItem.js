@@ -18,14 +18,16 @@ export class TodoItem extends Component {
             <div className="todo-item | d-flex align-items-center | px-4 py-2">
                 
                 <input type="checkbox" 
-                    onChange={this.props.markComplete.bind(
-                        this, id
-                    )} 
+                    onChange={this.props.markComplete.bind( this, id )}
                 />
 
-                <h3 className={`m-2 ${this.checkStyleCompleted() }`}> 
+                <h3 className={`d-block m-2 ${this.checkStyleCompleted() }`}> 
                     {title}
                 </h3>
+
+                <button className="btn ml-auto"
+                    onClick={this.props.delTodo.bind( this, id )}
+                >X</button>
                 
             </div>
         )
