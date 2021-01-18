@@ -3,6 +3,19 @@ import React, { Component } from 'react'
 
 export class AddTodo extends Component {
 
+    state = {
+        title: ''
+    }
+
+    // onChange = (e) => this.setState({title : e.target.value});
+    onChange = (e) => this.setState({[e.target.name] : e.target.value});
+
+    onSubmit = (e) => {
+        e.preventDefault();
+        this.props.addTodo(this.state.title);
+        this.setState({title: ''})
+    }
+
     render() {
         return (
             <section className="addTodo | my-4">
@@ -15,7 +28,7 @@ export class AddTodo extends Component {
                             <strong>Add Todo</strong>
                         </h2>
 
-                        <form>
+                        <form onSubmit={this.onSubmit}>
 
                             <div className="form-group text-center">
 
@@ -24,7 +37,10 @@ export class AddTodo extends Component {
                                     type="text" 
                                     name="title"
                                     autoComplete="off" 
-                                    placeholder="Add new Todo..."
+                                    placeholder={"Add new Todo..."}
+                                    value={this.state.title}
+                                    onChange={this.onChange}
+
                                 />
                                 <button type="submit" className="btn btn-primary">Submit</button>
 

@@ -3,6 +3,7 @@ import Header from "./components/layout/Header/Header"
 import Footer from "./components/layout/Footer/Footer"
 import Todos from './components/Todos/Todos'
 import AddTodo from './components/Todos/AddTodo'
+import { v4 as uuidv4 } from 'uuid';
 
 import './App.scss'
 
@@ -11,17 +12,17 @@ class App extends Component {
   state = { 
     todos : [
       {
-          id : 1,
+          id : uuidv4(),
           title : "Take out the trash",
           completed : false
       },
       {
-          id : 2,
+          id : uuidv4(),
           title : "Go wash my car",
           completed : false
       },
       {
-          id : 3,
+          id : uuidv4(),
           title : "Buy milk",
           completed : false
       }
@@ -60,6 +61,17 @@ class App extends Component {
       todos: [...this.state.todos.filter( todo => todo.id !== id)]
     })
   }
+  // Add Todo
+  addTodo = (title) => {
+    const newTodo = {
+      id: uuidv4(),
+      title: title,
+      completed: false,
+    }
+    this.setState({
+      todos: [...this.state.todos, newTodo]
+    })
+  }
 
   render() {
     // console.log(this.state.todos);
@@ -70,12 +82,13 @@ class App extends Component {
 
         <main className="container">
 
-          <AddTodo />
+          <AddTodo addTodo={this.addTodo} />
 
           <Todos 
             todos={this.state.todos} 
             markComplete={this.markComplete}
             delTodo={this.delTodo}
+
           />
 
         </main>
