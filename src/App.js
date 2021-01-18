@@ -87,7 +87,13 @@ class App extends Component {
           <main className="container">
           
             <Route exact path="/" render={ props => (
-              <React.Fragment>
+
+              <section className="Home | my-4">
+                <div className="row">
+                    <div className="col-12">
+                        <h2>Home</h2>
+                    </div>
+                </div>
                 <AddTodo addTodo={this.addTodo} />
                 <Todos 
                   todos={this.state.todos} 
@@ -95,7 +101,8 @@ class App extends Component {
                   delTodo={this.delTodo}
 
                 />
-              </React.Fragment>
+              </section>
+
             )}/>
 
             <Route path="/about" component={About} />
