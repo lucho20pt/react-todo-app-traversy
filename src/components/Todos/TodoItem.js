@@ -21,9 +21,9 @@ export class TodoItem extends Component {
                     onChange={this.props.markComplete.bind( this, id )}
                 />
 
-                <h3 className={`d-block m-2 ${this.checkStyleCompleted() }`}> 
+                <p className={`d-block m-2 ${this.checkStyleCompleted() }`}> 
                     {title}
-                </h3>
+                </p>
 
                 <button className="btn ml-auto"
                     onClick={this.props.delTodo.bind( this, id )}

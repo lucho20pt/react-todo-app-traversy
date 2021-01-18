@@ -24,9 +24,9 @@ export class AddTodo extends Component {
 
                     <div className="col-md-6 mx-auto">
 
-                        <h2 className="text-center">
+                        <h3 className="text-center">
                             <strong>Add Todo</strong>
-                        </h2>
+                        </h3>
 
                         <form onSubmit={this.onSubmit}>
 

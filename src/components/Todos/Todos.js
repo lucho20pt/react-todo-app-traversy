@@ -9,9 +9,9 @@ class Todos extends Component {
         return (
             <section className="todos | my-4 mx-auto">
 
-                <h2 className="text-center">
+                <h3 className="text-center">
                     <strong>My Todos List</strong>
-                </h2>
+                </h3>
 
                 <div className="row">
                     <div className="col-lg-6 mx-auto">
